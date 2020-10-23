@@ -1,17 +1,26 @@
 module ToyRobot
   class Robot
-    attr_reader :position
+    attr_reader :east, :north
 
-    def initialize(position = 0)
-      @position = position
+    def initialize(east = 0, north = 0)
+      @east = east
+      @north = north
     end
 
     def move_east
-      @position += 1
+      @east += 1
     end
 
     def move_west
-      @position -= 1
+      @east -= 1
+    end
+
+    def move_north
+      @north += 1
+    end
+
+    def move_south
+      @north -= 1
     end
   end
 end
