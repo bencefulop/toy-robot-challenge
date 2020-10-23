@@ -1,6 +1,6 @@
 module ToyRobot
   class Robot
-    DIRECTIONS = ["NORTH", "EAST", "SOUTH", "WEST"]
+    DIRECTIONS = %w[NORTH EAST SOUTH WEST].freeze
     attr_reader :east, :north, :direction
 
     def initialize(east = 0, north = 0, direction = 'NORTH')
@@ -38,12 +38,21 @@ module ToyRobot
       turn(:right)
     end
 
+    def report
+      {
+        # Why are we using "north" and "east" and not "@north" and "@east"?
+        north: north,
+        east: east,
+        direction: direction
+      }
+    end
+
     private
 
     def turn(turn_direction)
       index = DIRECTIONS.index(@direction)
       rotations = turn_direction == :right ? 1 : -1
-      @direction = DIRECTIONS.rotate(rotations)[index]  
+      @direction = DIRECTIONS.rotate(rotations)[index]
     end
   end
 end
