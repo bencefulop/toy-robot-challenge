@@ -3,7 +3,7 @@ require 'spec_helper'
 RSpec.describe ToyRobot::Table do
   subject { ToyRobot::Table.new(5, 5) }
 
-  context "valid location" do
+  context 'valid location' do
     it { should be_valid_location(0, 0) }
     it { should be_valid_location(4, 4) }
     it { should_not be_valid_location(5, 5) }
