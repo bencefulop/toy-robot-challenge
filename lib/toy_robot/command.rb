@@ -1,9 +1,11 @@
+require "English"
+
 module ToyRobot
   class Command
     def self.process(command)
       case command
       when /\APLACE (?<x>\d+),(?<y>\d+),(?<direction>\w+)\Z/
-        [:place, $~[:x].to_i, $~[:y].to_i, $~[:direction]]
+        [:place, $LAST_MATCH_INFO[:x].to_i, $LAST_MATCH_INFO[:y].to_i, $LAST_MATCH_INFO[:direction]]
       when /\AMOVE\Z/ then [:move]
       when /\ALEFT\Z/ then [:turn_left]
       when /\ARIGHT\Z/ then [:turn_right]
