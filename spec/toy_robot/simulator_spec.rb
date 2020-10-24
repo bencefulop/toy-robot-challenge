@@ -12,7 +12,7 @@ RSpec.describe ToyRobot::Simulator do
     expect(subject.robot).not_to be_nil
   end
 
-  it 'cannot place the robot onto an inposition' do
+  it 'cannot place the robot onto an invalid position' do
     expect(ToyRobot::Robot).not_to receive(:new)
     subject.place(5, 5, 'NORTH')
     expect(subject.robot).to be_nil
@@ -20,6 +20,22 @@ RSpec.describe ToyRobot::Simulator do
 
   it "does not have the robot placed by default" do
     expect(subject.robot_placed?).to eq(false)
+  end
+
+  it "does not move the robot" do
+    expect { subject.move }.to_not raise_error
+  end
+
+  it "turning an unplaced robot left does not cause an exception" do
+    expect { subject.turn_left }.to_not raise_error
+  end
+
+  it "turning an unplaced robot right does not cause an exception" do
+    expect { subject.turn_right }.to_not raise_error
+  end
+
+  it "asking an unplaced robot to report does not cause an exception" do
+    expect { subject.report }.to_not raise_error
   end
 
   context 'when robot has been placed' do
