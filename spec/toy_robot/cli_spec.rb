@@ -16,4 +16,19 @@ RSpec.describe ToyRobot::CLI do
                              ])
     end
   end
+
+  context "RUN" do
+    let(:simulator) { instance_double(ToyRobot::Simulator) }
+
+    before do
+      allow(subject).to receive(:simulator) { simulator }
+    end
+
+    context "place command" do
+      it "passes a place command to the simulator" do
+        expect(simulator).to receive(:place).with(0, 0, "NORTH")
+        subject.run([[:place, 0, 0, "NORTH"]])
+      end
+    end
+  end
 end
