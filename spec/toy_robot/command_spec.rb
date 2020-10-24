@@ -22,7 +22,7 @@ RSpec.describe ToyRobot::Command do
     end
   end
 
-  context "LEFT" do
+  context 'LEFT' do
     it 'processes the command' do
       command, *args = ToyRobot::Command.process('LEFT')
       expect(command).to eq(:turn_left)
@@ -30,7 +30,7 @@ RSpec.describe ToyRobot::Command do
     end
   end
 
-  context "RIGHT" do
+  context 'RIGHT' do
     it 'processes the command' do
       command, *args = ToyRobot::Command.process('RIGHT')
       expect(command).to eq(:turn_right)
@@ -38,7 +38,7 @@ RSpec.describe ToyRobot::Command do
     end
   end
 
-  context "REPORT" do
+  context 'REPORT' do
     it 'processes the command' do
       command, *args = ToyRobot::Command.process('REPORT')
       expect(command).to eq(:report)
