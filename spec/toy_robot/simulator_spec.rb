@@ -18,9 +18,17 @@ RSpec.describe ToyRobot::Simulator do
     expect(subject.robot).to be_nil
   end
 
+  it "does not have the robot placed by default" do
+    expect(subject.robot_placed?).to eq(false)
+  end
+
   context 'when robot has been placed' do
-    let(:robot) { instance_double(ToyRobot::Robot) }
+    let(:robot) { instance_double(ToyRobot::Robot, next_move: [0, 0]) }
     before { allow(subject).to receive(:robot).and_return(robot) }
+
+    it "has a placed robot" do
+      expect(subject.robot_placed?).to eq(true)
+    end
 
     it 'tells robot to move' do
       expect(robot).to receive(:move)
