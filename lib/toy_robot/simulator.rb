@@ -13,6 +13,7 @@ module ToyRobot
     end
 
     def move
+      return unless @table.valid_location?(*robot.next_move)
       robot.move
     end
 
@@ -26,7 +27,7 @@ module ToyRobot
 
     def report
       position = robot.report
-      puts "Robot is currently at (#{position[:north]}, #{position[:east]})" + " and it's facing #{position[:direction]}"
+      puts "Robot is currently at (#{position[:east]}, #{position[:north]})" + " and it's facing #{position[:direction]}"
     end
   end
 end
