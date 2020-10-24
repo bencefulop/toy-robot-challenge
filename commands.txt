@@ -1,3 +1,4 @@
+place 1,2,NORTH
 PLACE 1, 2, NORTH
 MOVE
 MOVE
