@@ -11,5 +11,21 @@ module ToyRobot
 
       @robot = Robot.new(east, north, facing)
     end
+
+    def move
+      robot.move
+    end
+
+    def turn_left
+      robot.turn_left
+    end
+
+    def turn_right
+      robot.turn_right
+    end
+
+    def report
+      robot.report
+    end
   end
 end

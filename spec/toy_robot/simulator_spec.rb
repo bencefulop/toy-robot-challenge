@@ -17,4 +17,29 @@ RSpec.describe ToyRobot::Simulator do
     subject.place(5, 5, 'NORTH')
     expect(subject.robot).to be_nil
   end
+
+  context "when robot has been placed" do
+    let(:robot) { instance_double(ToyRobot::Robot) }
+    before { allow(subject).to receive(:robot).and_return(robot) }
+
+    it "tells robot to move" do
+      expect(robot).to receive(:move)
+      subject.move
+    end
+
+    it "tells robot to turn left" do
+      expect(robot).to receive(:turn_left)
+      subject.turn_left
+    end
+
+    it "tells robot to turn right" do
+      expect(robot).to receive(:turn_right)
+      subject.turn_right
+    end
+
+    it "tells robot to report" do
+      expect(robot).to receive(:report)
+      subject.report
+    end
+  end
 end
