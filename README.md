@@ -1,6 +1,6 @@
 # ToyRobot Coding Challenge
 
-Toy robot is a popular coding exercise for junior developers in Melbourne. This is my solution, which is entirely based on Ryan Bigg's book on this topic, which you can find and purchase [here.](https://leanpub.com/toyrobot/).
+Toy robot is a popular coding exercise for junior developers in Melbourne. This is my solution, which is entirely based on Ryan Bigg's book, which you can find and purchase [here](https://leanpub.com/toyrobot/).
 
 The challenge was completed on TDD/BDD principles, by 'brute forcing' our way through tests and then refactoring code.
 
@@ -24,10 +24,6 @@ bundle install
 You can run Rspec tests by typing `rake` in the command line.
 
 # Original Instructions
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/toy_robot`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
