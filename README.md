@@ -1,6 +1,6 @@
 # ToyRobot Coding Challenge
 
-Toy robot is a popular coding exercise for junior developers in Melbourne. This is my solution, which is entirely based on Ryan Bigg's book, which you can find and purchase [here.](https://leanpub.com/toyrobot/).
+Toy robot is a popular coding exercise for junior developers in Melbourne. This is my solution, which is entirely based on Ryan Bigg's book on this topic, which you can find and purchase [here.](https://leanpub.com/toyrobot/).
 
 The challenge was completed on TDD/BDD principles, by 'brute forcing' our way through tests and then refactoring code.
 
